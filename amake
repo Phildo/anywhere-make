@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while [ "$PWD" != "/" ];  do
+  for i in *; do
+    if [[ $i =~ [Mm]akefile|MAKEFILE ]] && [ -f $i ]; then
+      make "$@"
+      exit 0
+    fi
+  done
+  cd ..
+done
+
+echo "No make file was found in this or any parent directories" 1>&2
+exit 1

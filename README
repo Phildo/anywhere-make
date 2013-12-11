@@ -1,0 +1,7 @@
+anywhere-make
+==========
+
+Convenience wrapper allowing make to be called from anywhere in your source tree.
+Simply passes calls to make up the directory tree until it finds a makefile. 
+
+To install, put amake anywhere on your path (/usr/local/bin), and then call it just as you would with make; now you can make your project from deep within some random directory. Hooray!
