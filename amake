@@ -1,9 +1,8 @@
 #!/bin/bash
 
 makefile=`fmake`
-if [ makefile ]; then
+if [ $makefile ]; then
   cd `dirname $makefile`
   make -f $makefile $@
-else
-  make $@
 fi
+

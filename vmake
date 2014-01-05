@@ -1,7 +1,7 @@
 #!/bin/bash
 
 makefile=`fmake`
-if [ makefile ]; then
+if [ $makefile ]; then
   vim $makefile $@
 else
   vim makefile
