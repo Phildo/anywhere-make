@@ -1,7 +1,11 @@
 anywhere-make
 ==========
 
-Convenience wrapper allowing make to be called from anywhere in your source tree.
-Simply passes calls to make up the directory tree until it finds a makefile. 
+Convenience wrapper allowing interaction with makefile from anywhere in your source tree.
 
-To install, put amake anywhere on your path (/usr/local/bin), and then call it just as you would with make; now you can make your project from deep within some random directory. Hooray!
+fmake - searches up directory tree (note- UP, not DOWN), if it finds a makefile, echos that file's location. if it gets to root, echo's error to stderr and exits 1.
+amake - uses fmake to find makefile, passes all arguments to and calls make on that file
+vmake - uses fmake to find makefile, and opens it with vim (switching editors is as simple as changing the name in the file)
+
+To install, put fmake, amake, and vmake anywhere on your path (/usr/local/bin), and then call any of these just as you would with make; 
+now you can make your project from deep within some random directory. Hooray!

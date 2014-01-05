@@ -2,8 +2,8 @@
 
 makefile=`fmake`
 if [ makefile ]; then
-  cd `dirname $makefile`
-  make -f $makefile $@
+  vim $makefile $@
 else
-  make $@
+  vim makefile
 fi
+
