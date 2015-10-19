@@ -1,0 +1,9 @@
+#!/bin/bash
+
+todofile=`fup '[Tr]odo|TODO' | awk 'NR==1 { print $0; exit }'`;
+if [ $todofile ]; then
+  $EDITOR $todofile;
+else
+  $EDITOR todo
+fi
+

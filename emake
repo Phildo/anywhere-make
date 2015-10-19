@@ -2,8 +2,8 @@
 
 makefile=`fmake`
 if [ $makefile ]; then
-  vim $makefile $@
+  $EDITOR $makefile $@
 else
-  vim makefile
+  $EDITOR makefile
 fi
 

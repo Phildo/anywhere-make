@@ -3,9 +3,12 @@ anywhere-make
 
 Convenience wrapper allowing interaction with makefile from anywhere in your source tree.
 
-fmake - searches up directory tree (note- UP, not DOWN), if it finds a makefile, echos that file's location. if it gets to root, echo's error to stderr and exits 1.
+fup - searches up directory tree (note- UP, not DOWN) for file matching regular expression (passed in $1)
+fmake - fup's for [Mm]akefile|MAKEFILE. if it finds a makefile, echos that file's location. if it gets to root, echo's error to stderr and exits 1.
 amake - uses fmake to find makefile, passes all arguments to and calls make on that file
-vmake - uses fmake to find makefile, and opens it with vim (switching editors is as simple as changing the name in the file)
+emake - uses fmake to find makefile, and opens it with $EDITOR
+etodo - fup's for [Tt]odo|TODO. if it finds a file, opens it with $EDITOR. otherwise, prints to stderr and exits 1.
 
-To install, put fmake, amake, and vmake anywhere on your path (/usr/local/bin), and then call any of these just as you would with make; 
+To install, put fup, fmake, amake, emake, and etodo anywhere on your path (/usr/local/bin), and then call any of these just as you would with make; 
 now you can make your project from deep within some random directory. Hooray!
+

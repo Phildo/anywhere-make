@@ -1,14 +1,10 @@
 #!/bin/bash
 
-while [ "$PWD" != "/" ];  do
-  for i in *; do
-    if [[ $i =~ [Mm]akefile|MAKEFILE ]] && [ -f $i ]; then
-      echo "`pwd`/$i"
-      exit 0
-    fi
-  done
-  cd ..
-done
+if fup '[Mm]akefile|MAKEFILE' > /dev/null; then
+  fup '[Mm]akefile|MAKEFILE' | awk 'NR==1 { print $0; exit }';
+  exit 0
+else
+  echo "No make file was found in this or any parent directories" 1>&2
+  exit 1
+fi
 
-echo "No make file was found in this or any parent directories" 1>&2
-exit 1
